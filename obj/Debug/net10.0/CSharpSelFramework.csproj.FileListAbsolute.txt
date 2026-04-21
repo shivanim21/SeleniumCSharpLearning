@@ -170,3 +170,9 @@ C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\bin\Debug\net10.0\Syste
 C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\bin\Debug\net10.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\bin\Debug\net10.0\runtimes\win\lib\net10.0\System.Diagnostics.EventLog.Messages.dll
 C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\bin\Debug\net10.0\runtimes\win\lib\net10.0\System.Diagnostics.EventLog.dll
+C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\bin\Debug\net10.0\SeleniumExtras.PageObjects.dll
+C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\obj\Debug\net10.0\CSharpSelFramework.gentestingplatformentrypointinputcache.cache
+C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\obj\Debug\net10.0\CSharpSelFramework.genautoregisteredextensionsinputcache.cache
+C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\obj\Debug\net10.0\CSharpSelFramework.sourcelink.json
+C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\bin\Debug\net10.0\utilities\testData.json

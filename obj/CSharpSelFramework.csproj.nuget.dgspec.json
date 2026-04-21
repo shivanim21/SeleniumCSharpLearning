@@ -52,25 +52,35 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
+            "DotNetSeleniumExtras.PageObjects": {
+              "target": "Package",
+              "version": "[3.11.0, )"
+            },
+            "DotNetSeleniumExtras.PageObjects.Core": {
+              "target": "Package",
+              "version": "[4.14.1, )"
+            },
             "DotNetSeleniumExtras.WaitHelpers": {
               "target": "Package",
               "version": "[3.11.0, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.14.0, )"
+              "version": "[18.4.0, )"
             },
             "NUnit": {
               "target": "Package",
-              "version": "[4.3.2, )"
+              "version": "[4.5.1, )"
             },
             "NUnit.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[4.7.0, )"
+              "version": "[4.12.0, )"
             },
             "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[6.2.0, )"
             },
             "Selenium.Support": {
               "target": "Package",
@@ -89,8 +99,10 @@
               "version": "[2.17.7, )"
             },
             "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.4, )"
+              "version": "[10.0.0, )"
             }
           },
           "imports": [

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSharpSelFramework")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8ecba8f06fde977a53d45cc50e23e6887e428ca")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSharpSelFramework")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSharpSelFramework")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

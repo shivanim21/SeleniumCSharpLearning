@@ -12,7 +12,8 @@ namespace CSharpSelFramework.utilities
 {
     public class Base
     {
-        public required IWebDriver driver;
+        //public IWebDriver driver;
+        public ThreadLocal<IWebDriver> driver = new();
         [SetUp]
 
         public void StartBrowser()
@@ -21,12 +22,32 @@ namespace CSharpSelFramework.utilities
             String browserName = ConfigurationManager.AppSettings["browser"];
             InitBrowser(browserName);
 
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            getDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 
-            driver.Manage().Window.Maximize();
-            driver.Url = "https://rahulshettyacademy.com/loginpagePractise/";
+            getDriver().Manage().Window.Maximize();
+            getDriver().Url = "https://rahulshettyacademy.com/loginpagePractise/";
+
+            //ChromeOptions options = new ChromeOptions();
+            ////Window Behavior
+            //options.AddArgument("start-maximized");
+
+            ////Remove automation message
+            //options.AddExcludedArgument("enable-automation");
+            //options.AddAdditionalOption("useAutomationExtension", false);
+
+            ////Disable notifications and password popups
+            //options.AddArgument("--disable-notifications");
+            //options.AddUserProfilePreference("credentials_enable_service", false);
+            //options.AddUserProfilePreference("profile.password_manager_enabled", false);
+
+           
 
 
+        }
+
+        public IWebDriver getDriver()
+        {
+            return driver.Value;
         }
 
         public void InitBrowser(String browserName)
@@ -35,20 +56,41 @@ namespace CSharpSelFramework.utilities
             {
                 case "Firefox":
                     new WebDriverManager.DriverManager().SetUpDriver(new FirefoxConfig());
-                    driver = new FirefoxDriver();
+                    driver.Value = new FirefoxDriver();
                     break;
 
                 case "Chrome":
                     new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
-                    driver = new ChromeDriver();
+      
+
+                    ChromeOptions options = new ChromeOptions();
+
+                    options.AddArgument("start-maximized");
+                    options.AddExcludedArgument("enable-automation");
+                    options.AddAdditionalOption("useAutomationExtension", false);
+                    options.AddArgument("--disable-notifications");
+                    options.AddUserProfilePreference("credentials_enable_service", false);
+                    options.AddUserProfilePreference("profile.password_manager_enabled", false);
+                    options.AddArgument("--disable-features=PasswordLeakDetection");
+                    options.AddUserProfilePreference("credentials_enable_service", false);
+                    options.AddUserProfilePreference("profile.password_manager_enabled", false);
+                    options.AddArgument("--disable-features=PasswordLeakDetection");
+                    options.AddArgument("--incognito");
+
+                    driver.Value = new ChromeDriver(options);
                     break;
 
                 case "Edge":
-                    driver = new EdgeDriver();
+                    driver.Value = new EdgeDriver();
                     break;
 
             }
 
+        }
+
+        public static JsonReader getDataParser()
+        {
+            return new JsonReader();
         }
 
         [TearDown]
@@ -56,7 +98,7 @@ namespace CSharpSelFramework.utilities
         {
             if (driver is IDisposable disposable)
             {
-                driver.Quit();
+                getDriver().Quit();
                 disposable.Dispose();
             }
         }
