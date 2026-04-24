@@ -1,0 +1,74 @@
+Started by user Shivani
+Running as SYSTEM
+Building in workspace C:\Users\Sowmya\source\repos\learning\CSharpSelFramework
+[CSharpSelFramework] $ cmd /c call C:\Users\Sowmya\AppData\Local\Temp\jenkins13331110100509141855.bat
+
+C:\Users\Sowmya\source\repos\learning\CSharpSelFramework>dotnet test 
+  Determining projects to restore...
+  Restored C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\CSharpSelFramework.csproj (in 269 ms).
+  CSharpSelFramework -> C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\bin\Debug\net10.0\CSharpSelFramework.dll
+Test run for C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\bin\Debug\net10.0\CSharpSelFramework.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+  Failed EndToEndFlow("rahulshetty","Learning",["iphone X", "Blackberry"]) [16 s]
+  Error Message:
+   Multiple failures or warnings in test:
+  1) OpenQA.Selenium.WebDriverTimeoutException : Timed out after 8 seconds
+  ----> OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {"method":"partial link text","selector":"Checkout"}
+  (Session info: chrome=147.0.7727.117); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+     at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at CSharpSelFramework.pageObjects.ProductsPage.waitForPageDisplay() in C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\pageObjects\ProductsPage.cs:line 32
+   at CSharpSelFramework.tests.E2ETest.EndToEndFlow(String username, String password, String[] expectedProducts) in C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\tests\E2ETest.cs:line 36
+   at InvokeStub_E2ETest.EndToEndFlow(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+--NoSuchElementException
+   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.By.<.ctor>b__6_0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.WebDriver.FindElement(By by)
+   at SeleniumExtras.WaitHelpers.ExpectedConditions.<>c__DisplayClass7_0.<ElementIsVisible>b__0(IWebDriver driver)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+  2) TearDown : System.ObjectDisposedException : Cannot access a disposed object.
+Object name: 'System.Threading.ThreadLocal`1[[OpenQA.Selenium.IWebDriver, WebDriver, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+  --TearDown
+   at System.Threading.ThreadLocal`1.GetValueSlow()
+   at CSharpSelFramework.utilities.Base.CloseBrowser() in C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\utilities\Base.cs:line 127
+   at InvokeStub_Base.CloseBrowser(Object, Object, IntPtr*)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+
+  Stack Trace:
+  
+1)    at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at CSharpSelFramework.pageObjects.ProductsPage.waitForPageDisplay() in C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\pageObjects\ProductsPage.cs:line 32
+   at CSharpSelFramework.tests.E2ETest.EndToEndFlow(String username, String password, String[] expectedProducts) in C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\tests\E2ETest.cs:line 36
+   at InvokeStub_E2ETest.EndToEndFlow(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+--NoSuchElementException
+   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)
+   at OpenQA.Selenium.WebDriver.ExecuteAsync(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.By.<.ctor>b__6_0(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.WebDriver.FindElement(By by)
+   at SeleniumExtras.WaitHelpers.ExpectedConditions.<>c__DisplayClass7_0.<ElementIsVisible>b__0(IWebDriver driver)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+2) --TearDown
+   at System.Threading.ThreadLocal`1.GetValueSlow()
+   at CSharpSelFramework.utilities.Base.CloseBrowser() in C:\Users\Sowmya\source\repos\learning\CSharpSelFramework\utilities\Base.cs:line 127
+   at InvokeStub_Base.CloseBrowser(Object, Object, IntPtr*)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+
+
+Failed!  - Failed:     1, Passed:     2, Skipped:     0, Total:     3, Duration: 16 s - CSharpSelFramework.dll (net10.0)
+
+C:\Users\Sowmya\source\repos\learning\CSharpSelFramework>exit 1 
+Process leaked file descriptors. See https://www.jenkins.io/redirect/troubleshooting/process-leaked-file-descriptors for more information
+Build step 'Execute Windows batch command' marked build as failure
+Finished: FAILURE
